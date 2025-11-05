@@ -1,4 +1,3 @@
-
 import { styled } from '@mui/material';
 
 import { bannerData } from '../../constant/data';
@@ -45,8 +44,12 @@ const Banner = () => {
             itemClass="carousel-item-padding-40-px"
         >
             {
-                bannerData.map(image => (
-                    <Image src={image.url} alt="banner" id={image.id} />
+                bannerData.map((image, index) => (
+                    <Image 
+                        key={image.id || index} 
+                        src={image.url} 
+                        alt={image.alt || `Bannière promotionnelle ${index + 1}`} 
+                    />
                 ))
             }
         </Carousel>

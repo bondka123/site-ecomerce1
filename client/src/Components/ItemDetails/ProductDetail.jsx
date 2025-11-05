@@ -1,4 +1,3 @@
-
 import { Box, Typography, Table, TableBody, TableRow, TableCell, styled } from '@mui/material';
 import { LocalOffer as Badge } from '@mui/icons-material';
 
@@ -9,7 +8,7 @@ const SmallText = styled(Box)`
         font-size: 14px;
         margin-top: 10px;
     }
-`
+`;
 
 const ColumnText = styled(TableRow)`
     font-size: 14px;
@@ -18,7 +17,7 @@ const ColumnText = styled(TableRow)`
         font-size: 14px;
         margin-top: 10px;
     }
-`
+`;
 
 const StyledBadge = styled(Badge)`
     margin-right: 10px;
@@ -28,7 +27,7 @@ const StyledBadge = styled(Badge)`
 
 const ProductDetail = ({ product }) => {
     const adURL = 'https://rukminim1.flixcart.com/lockin/774/185/images/CCO__PP_2019-07-14.png?q=50';
-    const date = new Date(new Date().getTime()+(5*24*60*60*1000));
+    const date = new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000));
     
     return (
         <>
@@ -59,7 +58,11 @@ const ProductDetail = ({ product }) => {
                     </ColumnText>
                     <TableRow>
                         <TableCell colSpan={2}>
-                            <img src={adURL} style={{ width: 390 }} />
+                            <img 
+                                src={adURL} 
+                                alt="Publicité Flipkart Partner Plus" 
+                                style={{ width: 390 }} 
+                            />
                         </TableCell>
                     </TableRow>
                     <ColumnText>
@@ -69,7 +72,7 @@ const ProductDetail = ({ product }) => {
                 </TableBody>
             </Table>
         </>
-    )
-}
+    );
+};
 
 export default ProductDetail;

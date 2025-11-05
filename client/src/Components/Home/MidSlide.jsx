@@ -1,49 +1,28 @@
+import { Grid, Box, styled } from '@mui/material';
 
-import { Box, styled } from '@mui/material';
-
-import Slide from './Slide';
-
-const Component = styled(Box)`
-    display: flex;
-`
-
-const LeftComponent = styled(Box)(({ theme}) => ({
-    width: '83%',
-    [theme.breakpoints.down('md')]: {
-        width: '100%'
-    }
-}))
-
-const RightComponent = styled(Box)(({ theme}) => ({
-    marginTop: 10,
-    background: '#FFFFFF',
-    width: '17%',
-    marginLeft: 10,
-    padding: 5,
-    textAlign: 'center',
-    [theme.breakpoints.down('md')]: {
-        display: 'none'
-    }
+const Image = styled('img')(({ theme }) => ({
+  marginTop: 10,
+  width: '100%',
+  height: 220,
+  objectFit: 'contain',
+  [theme.breakpoints.down('md')]: {
+    height: 180,
+    objectFit: 'cover',
+  },
 }));
 
-const MidSlide = ({ products }) => {
-    const adURL = 'https://rukminim1.flixcart.com/flap/464/708/image/633789f7def60050.jpg?q=70';
+const MidSection = () => {
+  const url = 'https://rukminim1.flixcart.com/flap/464/708/image/633789f7def60050.jpg?q=70';
 
-    return (
-        <Component>
-            <LeftComponent>
-                <Slide 
-                    data={products} 
-                    title='Deals of the Day'
-                    timer={true} 
-                    multi={true} 
-                />
-            </LeftComponent>
-            <RightComponent>
-                <img src={adURL} style={{width: 217}}/>
-            </RightComponent>
-        </Component>
-    )
-}
+  return (
+    <Box sx={{ backgroundColor: '#fff', padding: 2 }}>
+      <Grid container>
+        <Grid item xs={12}>
+          <Image src={url} alt="Offre spéciale Flipkart" />
+        </Grid>
+      </Grid>
+    </Box>
+  );
+};
 
-export default MidSlide;
+export default MidSection;

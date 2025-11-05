@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import productRoutes from './routes/productRoutes.js';
+app.use('/', productRoutes);
+
 
 import { Provider } from 'react-redux';
 import store from './redux/store';

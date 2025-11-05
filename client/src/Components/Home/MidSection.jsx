@@ -1,44 +1,28 @@
-import {  Grid, styled } from '@mui/material';
+import { Grid, Box, styled } from '@mui/material';
 
-const ImageURL = [
-    'https://rukminim1.flixcart.com/flap/960/960/image/2f30db9425df5cec.jpg?q=50',
-    'https://rukminim1.flixcart.com/flap/960/960/image/084789479074d2b2.jpg',
-    'https://rukminim1.flixcart.com/flap/960/960/image/1ce0c4c1fb501b45.jpg?q=50'
-];
-
-const Wrapper = styled(Grid)`
-    display: flex;
-    margin-top: 20px;
-    justify-content: space-between;
-`;
-
-const Image = styled('img')(({ theme }) => ({ 
-    display: 'flex',
-    marginTop: 20,
-    justifyContent: 'space-between',
-    width: '100%',
-    [theme.breakpoints.down('md')]: {
-        objectFit: 'cover',
-        height: 120
-    }
+const Image = styled('img')(({ theme }) => ({
+  marginTop: 10,
+  width: '100%',
+  height: 220,
+  objectFit: 'contain',
+  [theme.breakpoints.down('md')]: {
+    height: 180,
+    objectFit: 'cover',
+  },
 }));
 
 const MidSection = () => {
-    const url = 'https://rukminim1.flixcart.com/flap/3006/433/image/4789bc3aefd54494.jpg?q=50';
-    return (
-        <>
-            <Wrapper lg={12} sm={12} md={12} xs={12} container>
-                {
-                    ImageURL.map(image => (
-                        <Grid item lg={4} md={4} sm={12} xs={12}>
-                            <img src={image} style={{ width: '100%' }} />
-                        </Grid>
-                    ))
-                }
-            </Wrapper>
-            <Image src={url} />
-        </>
-    )
-}
+  const url = 'https://rukminim1.flixcart.com/flap/464/708/image/633789f7def60050.jpg?q=70';
+
+  return (
+    <Box sx={{ backgroundColor: '#fff', padding: 2 }}>
+      <Grid container>
+        <Grid item xs={12}>
+          <Image src={url} alt="Offre spéciale Flipkart - Promotion du jour" />
+        </Grid>
+      </Grid>
+    </Box>
+  );
+};
 
 export default MidSection;
